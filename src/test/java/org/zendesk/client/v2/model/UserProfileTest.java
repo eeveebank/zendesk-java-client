@@ -18,20 +18,19 @@ public class UserProfileTest {
     public static final String PROFILE_NAME = "name";
 
     @Test
-    public void testSerializeDeserialize() throws JsonProcessingException {
-
+    public void serializeDeserialize() throws JsonProcessingException {
         ObjectMapper mapper = Zendesk.createMapper();
         String email = "user123@example.com";
-        UserProfile profile = createUserProfile(email);
+        UserProfile profile = createSampleUserProfile(email);
         String serialized = mapper.writeValueAsString(profile);
 
         UserProfile deserialized = mapper.readValue(serialized, UserProfile.class);
-        assertThat(deserialized.name).isEqualTo(PROFILE_NAME);
-        assertThat(deserialized.user_id).isEqualTo("123");
-        assertThat(deserialized.identifiers).contains(new UserProfile.Identifier("email", email));
+        assertThat(deserialized.getName()).isEqualTo(PROFILE_NAME);
+        assertThat(deserialized.getUserId()).isEqualTo("123");
+        assertThat(deserialized.getIdentifiers()).contains(new UserProfile.Identifier("email", email));
     }
 
-    private UserProfile createUserProfile(String email) {
+    private UserProfile createSampleUserProfile(String email) {
         var identifiers = List.of(new UserProfile.Identifier("email", email));
 
         return new UserProfile(
