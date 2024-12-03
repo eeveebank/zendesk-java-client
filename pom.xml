@@ -106,7 +106,7 @@
       <dependency>
         <groupId>io.netty</groupId>
         <artifactId>netty-bom</artifactId>
-        <version>4.1.112.Final</version>
+        <version>4.1.115.Final</version>
         <type>pom</type>
         <scope>import</scope>
       </dependency>
@@ -122,7 +122,7 @@
     <dependency>
       <groupId>org.asynchttpclient</groupId>
       <artifactId>async-http-client</artifactId>
-      <version>2.12.3</version>
+      <version>3.0.1</version>
     </dependency>
     <dependency>
       <groupId>com.fasterxml.jackson.core</groupId>
@@ -243,7 +243,7 @@
             <configuration>
               <rules>
                 <enforceBytecodeVersion>
-                  <maxJdkVersion>1.8</maxJdkVersion>
+                  <maxJdkVersion>11</maxJdkVersion>
                 </enforceBytecodeVersion>
               </rules>
             </configuration>
